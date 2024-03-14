@@ -18,9 +18,13 @@ public:
 private slots:
     void on_plotButton_clicked();
 
-    void on_pushButton_clicked();
+    void on_clearButton_clicked();
 
     void hide_minorPlot();
+
+    void on_lineStylecomboBox_currentIndexChanged(int index);
+
+    void on_SCattercomboBox_currentIndexChanged(int index);
 
 private:
     Ui::NetworkPlot *ui;

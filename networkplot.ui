@@ -27,8 +27,8 @@
    <widget class="QPushButton" name="plotButton">
     <property name="geometry">
      <rect>
-      <x>770</x>
-      <y>450</y>
+      <x>780</x>
+      <y>370</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -37,24 +37,24 @@
      <string>Plot</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="clearButton">
     <property name="geometry">
      <rect>
-      <x>890</x>
-      <y>450</y>
+      <x>900</x>
+      <y>370</y>
       <width>89</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>Push</string>
+     <string>Clear</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="clearButton">
+   <widget class="QPushButton" name="closeButton">
     <property name="geometry">
      <rect>
-      <x>890</x>
-      <y>500</y>
+      <x>900</x>
+      <y>420</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -72,6 +72,190 @@
       <height>331</height>
      </rect>
     </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>305</x>
+      <y>460</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Line Style</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>460</y>
+      <width>91</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SCatter Style</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="clearButton_2">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>420</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="lineStylecomboBox">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>480</y>
+      <width>101</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>lsNone</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>lsLine</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>lsStepLeft</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>lsStepRight</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>lsStepCenter</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>lsImpulse</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>lsNone</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="SCattercomboBox">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>480</y>
+      <width>111</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>ssNone</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssDot</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssCross</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssPlus</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssCircle</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssDisc</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssSquare</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssDiamond</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssStar</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssTriangle</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssTriangleInverted</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssCrossSquare</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssPlusSquare</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssPlusSquare</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssCrossCircle</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssPlusCircle</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssPeace</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ssCross</string>
+     </property>
+    </item>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -97,7 +281,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>clearButton</sender>
+   <sender>closeButton</sender>
    <signal>clicked()</signal>
    <receiver>NetworkPlot</receiver>
    <slot>close()</slot>
