@@ -21,6 +21,14 @@ NetworkPlot::NetworkPlot(QWidget *parent)
 
     hide_minorPlot();// add new minor Plot
 
+    ui->SCattercomboBox->setCurrentIndex(4);
+    ui->lineStylecomboBox->setCurrentIndex(1);
+
+    ServerThread *thread = new ServerThread(this);
+
+    /*connect(thread,SIGNAL(newDataRecieved(QByteArray)),this,SLOT(parseData(QByteArray)));*/
+    thread->start();
+
 }
 
 NetworkPlot::~NetworkPlot()
