@@ -2,6 +2,10 @@
 #define NETWORKPLOT_H
 
 #include <QMainWindow>
+#include <QVector>
+#include <QDebug>
+#include "qcustomplot.h"
+#include "serverthread.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class NetworkPlot; }
