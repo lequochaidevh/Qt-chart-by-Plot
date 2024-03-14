@@ -15,6 +15,13 @@ public:
     NetworkPlot(QWidget *parent = nullptr);
     ~NetworkPlot();
 
+private slots:
+    void on_plotButton_clicked();
+
+    void on_pushButton_clicked();
+
+    void hide_minorPlot();
+
 private:
     Ui::NetworkPlot *ui;
 };
