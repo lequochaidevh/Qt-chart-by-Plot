@@ -32,5 +32,9 @@ private slots:
 
 private:
     Ui::NetworkPlot *ui;
+
+public slots:
+    void parseData(QByteArray);
 };
+
 #endif // NETWORKPLOT_H
