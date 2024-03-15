@@ -10,5 +10,3 @@ int main(int argc, char *argv[])
     return a.exec();
 }
 
-//git token
-//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
