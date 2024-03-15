@@ -26,7 +26,7 @@ NetworkPlot::NetworkPlot(QWidget *parent)
 
     ServerThread *thread = new ServerThread(this);
 
-    /*connect(thread,SIGNAL(newDataRecieved(QByteArray)),this,SLOT(parseData(QByteArray)));*/
+    connect(thread,SIGNAL(newDataRecieved(QByteArray)),this,SLOT(parseData(QByteArray)));
     thread->start();
 
 }
@@ -34,6 +34,42 @@ NetworkPlot::NetworkPlot(QWidget *parent)
 NetworkPlot::~NetworkPlot()
 {
     delete ui;
+}
+
+void NetworkPlot::parseData(QByteArray Data)
+{
+    qDebug()<< "Got data:"<< Data;
+
+    QJsonParseError parseError;
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(Data,&parseError);
+
+    if(parseError.error != QJsonParseError::NoError){
+        qDebug()<< "Parse Error"<< parseError.errorString();
+        return;
+    }
+
+    QJsonArray jsonArray = jsonResponse.array();
+
+    if(!jsonArray.isEmpty()){
+        QJsonObject jsonObject = jsonArray.first().toObject();
+
+        QVector <double> x,y;
+
+        for(int i=0;i<jsonObject.value("X").toArray().size();i++){
+            x.push_back(jsonObject.value("X").toArray()[i].toDouble());
+            y.push_back(jsonObject.value("Y").toArray()[i].toDouble());
+        }
+
+        ui->customPlot->graph(0)->setData(x,y);
+        ui->customPlot->rescaleAxes();
+        ui->customPlot->replot();
+        ui->customPlot->update();
+
+        ui->minorPlot->graph(0)->setData(y,x);
+        ui->minorPlot->rescaleAxes();
+        ui->minorPlot->replot();
+        ui->minorPlot->update();
+    }
 }
 
 
